@@ -33,6 +33,11 @@ for i in range(subtask1, subtask2-5):
     while a >= 10**256:
         b = randint(3, 10**6)
         a = b * randint(10**4, 10**256)
+    with open(f'./testdata/{i}.in', 'w') as f:
+        f.write(f'{a} {b}\n')
+
+    with open(f'./testdata/{i}.out', 'w') as f:
+        f.write(f'{gcd(a,b)}\n')
 
 for i in range(subtask2-5, subtask2):
     a, b = randint(10**5, 10**256), randint(1, 10**6)
